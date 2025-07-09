@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { View, Text, StatusBar, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AuthHeader from '../../components/headers/AuthHeader';
 import RecentReports from '../../components/cards/RecentReports';
@@ -9,21 +9,27 @@ import ScreenContainer from '../../components/containers/ScreenContainer';
 import HomeHeader from '../../components/headers/HomeHeader';
 import ScreenContentContainer from '../../components/containers/ScreenContentContainer';
 import AppHeader from '../../components/headers/AppHeader';
-import ReportedIssues from '../../components/cards/ReportedIssues';
+import PropertiesRenderItem from '../../components/cards/PropertiesRenderItem';
+import IconContainer from '../../components/buttons/IconContainer';
+import AppColors from '../../assets/colors/AppColors';
+import PropertyDetail from '../../components/cards/PropertyDetail';
 
+const PropertyDetailScreen = ({ navigation }: any) => {
 
-const ViewReports = ({navigation}:any) => {
   return (
     <ScreenContainer>
       <StatusBar barStyle="light-content" />
       <View className="flex-1">
-        <AppHeader title='Reported Issues' search={true} filterFields={['status', 'property', 'startDate', 'endDate']}/>
+        <AppHeader
+          title="Garden Villa"
+        />
+
         <ScreenContentContainer>
-        <ReportedIssues navigation={navigation}/>
+            <PropertyDetail />
         </ScreenContentContainer>
       </View>
     </ScreenContainer>
   );
 };
 
-export default ViewReports;
+export default PropertyDetailScreen;

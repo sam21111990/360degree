@@ -3,14 +3,14 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import StatusBadge from '../buttons/StatusBadge';
 import { getStatusStyles } from '../../utils/StatusStyle';
 
-interface RenderItemProps {
+interface PropertIssueRenderItemProps {
   title: string;
   date: string;
   status: string;
   navigation?:any
 }
 
-const RenderItem: React.FC<RenderItemProps> = ({ title, date, status,navigation }) => {
+const PropertIssueRenderItem: React.FC<PropertIssueRenderItemProps> = ({ title, date, status,navigation }) => {
   const [beforeDash, afterDash] = title.split(/-(.+)/);
 
 const styles = getStatusStyles(status);
@@ -20,7 +20,7 @@ const handleBadgePress = () => {
     // Add navigation or any other logic here
   };
   return (
-    <View className="bg-transparent border border-solid border-gray-300 p-3 mb-2 rounded-xl">
+    <View className="bg-transparent border-b border-gray-300 rounded-xl p-3  ">
       {/* Title */}
       <Text className="text-sm flex-row flex-wrap">
         <Text className="text-black font-semibold">{beforeDash?.trim()}</Text>
@@ -44,4 +44,4 @@ const handleBadgePress = () => {
   );
 };
 
-export default RenderItem;
+export default PropertIssueRenderItem;

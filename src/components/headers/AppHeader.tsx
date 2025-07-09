@@ -8,7 +8,8 @@ interface AppHeaderProps {
   search?: boolean;
   showBack?: boolean;
   showNotification?: boolean;
-  titleSize?: 'text-xl' | 'text-2xl' | 'text-lg'; // You can expand this
+  titleSize?: 'text-xl' | 'text-2xl' | 'text-lg'; 
+  filterFields?: Array<'status' | 'property' | 'startDate' | 'endDate' | 'sortBy'>;
 }
 
 const AppHeader: React.FC<AppHeaderProps> = ({
@@ -16,7 +17,8 @@ const AppHeader: React.FC<AppHeaderProps> = ({
   search = false,
   showBack = true,
   showNotification = false,
-  titleSize = 'text-xl',
+  titleSize = 'text-lg',
+  filterFields,
 }) => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
@@ -105,6 +107,8 @@ const AppHeader: React.FC<AppHeaderProps> = ({
         onClose={() => setModalVisible(false)}
         onClear={handleClear}
         onApply={handleApply}
+        fields={filterFields || ['status', 'property', 'startDate', 'endDate','sortBy']} 
+        
       />
     </View>
   );

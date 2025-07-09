@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ViewReports from '../screens/bottomTab/ViewReports';
 import AppColors from '../assets/colors/AppColors';
 import PropertiesScreen from '../screens/bottomTab/PropertiesScreen';
+import CleaningScreen from '../screens/bottomTab/CleaningScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -99,7 +100,7 @@ const TabNavigation = () => {
     >
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Properties" component={PropertiesScreen} />
-      <Tab.Screen name="Cleanings" component={HomeScreen} />
+      <Tab.Screen name="Cleanings" component={CleaningScreen} />
       <Tab.Screen name="Users" component={HomeScreen} />
       <Tab.Screen name="Profile" component={HomeScreen} />
     </Tab.Navigator>

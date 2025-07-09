@@ -14,6 +14,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faSquareCheck } from '@fortawesome/free-solid-svg-icons/faSquareCheck';
 import { faMugSaucer } from '@fortawesome/free-solid-svg-icons/faMugSaucer';
 import IssueDetailScreen from './src/screens/bottomTab/IssueDetailScreen';
+import PropertyDetailScreen from './src/screens/bottomTab/PropertyDetailScreen';
+import CreateNewPropertyScreen from './src/components/cards/CreateNewPropertyScreen';
+import CreateChecklistTemplate from './src/components/cards/CreateChecklistTemplate';
 
 library.add(fab, faSquareCheck, faMugSaucer);
 const Stack = createNativeStackNavigator();
@@ -62,6 +65,21 @@ const App = () => {
             <Stack.Screen
               name="IssueDetailScreen"
               component={IssueDetailScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="PropertyDetailScreen"
+              component={PropertyDetailScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="CreateNewPropertyScreen"
+              component={CreateNewPropertyScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="CreateChecklistTemplate"
+              component={CreateChecklistTemplate}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

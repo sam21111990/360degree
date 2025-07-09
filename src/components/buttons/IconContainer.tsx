@@ -39,6 +39,7 @@ interface IconProps {
   color: string;
   size?: number;
   padding?: number; 
+  backgroundColor?: string;
   onPress?: () => void;
 }
 
@@ -66,7 +67,8 @@ const IconContainer: React.FC<IconProps> = ({
   color,
   size = 24,
   padding = 9,
-  onPress
+  onPress,
+  backgroundColor='rgba(59, 85, 115, 0.7)'
 }) => {
   const IconComponent = iconMap[type];
 
@@ -76,7 +78,7 @@ const IconContainer: React.FC<IconProps> = ({
   }
 
   return (
-    <TouchableOpacity style={[styles.iconWrapper, { padding }]} onPress={onPress} >
+    <TouchableOpacity style={[styles.iconWrapper, { padding ,backgroundColor: backgroundColor}]} onPress={onPress} >
       <IconComponent name={name} size={size} color={color} />
     </TouchableOpacity>
   );
@@ -86,7 +88,6 @@ export default IconContainer;
 
 const styles = StyleSheet.create({
   iconWrapper: {
-    backgroundColor: 'rgba(59, 85, 115, 0.7)',
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',

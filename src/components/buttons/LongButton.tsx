@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
 
 type LongButtonProps = TouchableOpacityProps & {
   bgColor: string;      // background color class from NativeWind (e.g. 'bg-blue-500')
@@ -9,11 +9,14 @@ type LongButtonProps = TouchableOpacityProps & {
 
 const LongButton: React.FC<LongButtonProps> = ({ bgColor, textColor, title, ...rest }) => {
   return (
-    <TouchableOpacity style={{backgroundColor:`${bgColor}`}}  className={` w-80 px-4 py-2 rounded-full`} {...rest}>
-      <Text style={{fontFamily:'Poppins-Medium'}} className={` text-center text-lg font-bold ${textColor}`}>
+    <View className="absolute bottom-4 left-0 right-0  justify-center items-center ">
+
+    <TouchableOpacity style={{backgroundColor:`${bgColor}`, }}  className={` w-80 px-4 py-3 rounded-full`} {...rest}>
+      <Text  className={` text-center text-base font-semibold ${textColor}`}>
         {title}
       </Text>
     </TouchableOpacity>
+    </View>
   );
 };
 
